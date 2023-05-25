@@ -1,1 +1,0 @@
-<?php echo aarhus_select_execute_shortcode('qodef_icon', $icon_parameters); ?>

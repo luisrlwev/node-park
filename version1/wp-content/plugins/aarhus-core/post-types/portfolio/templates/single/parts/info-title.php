@@ -1,1 +1,0 @@
-<h6 class="qodef-ps-info-title"><?php echo esc_html( $title ); ?></h6>
