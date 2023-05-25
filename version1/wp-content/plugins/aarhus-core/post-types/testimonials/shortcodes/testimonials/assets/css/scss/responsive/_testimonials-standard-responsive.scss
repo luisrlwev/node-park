@@ -1,0 +1,71 @@
+/* ==========================================================================
+   Testimonials Standard responsive style - begin
+   ========================================================================== */
+
+.qodef-testimonials-holder {
+
+    &.qodef-testimonials-standard {
+        text-align: center;
+
+        .qodef-testimonial-content {
+
+            @include laptop-landscape-mac {
+
+                .qodef-testimonial-text-holder {
+                    padding: 0 30px 0 236px;
+                }
+            }
+
+            @include ipad-landscape {
+
+                .qodef-testimonial-text-holder {
+                    padding: 0 0 0 185px;
+                }
+            }
+
+            @include ipad-portrait {
+
+                .qodef-testimonial-text-holder {
+                    padding: 185px 0 0 0;
+                }
+            }
+        }
+
+        &.qodef-testimonials-pagination-position-right {
+
+            @include laptop-landscape-large {
+
+                .owl-dots {
+                    @include qodefTransform(rotate(90deg) translateX(-16px));
+                    left: calc(100% + 20px);
+                }
+            }
+
+            @include phone-portrait {
+
+                .owl-dots {
+                    @include qodefTransform(rotate(90deg) translateX(-16px));
+                    left: calc(100% + 20px);
+                }
+            }
+        }
+    }
+
+    @include ipad-portrait {
+
+        &:after {
+            top: -65px;
+        }
+    }
+
+    @include phone-portrait {
+
+        &:after {
+            top: -25px;
+            font-size: 300px;
+        }
+    }
+}
+/* ==========================================================================
+   Testimonials Standard responsive style - end
+   ========================================================================== */

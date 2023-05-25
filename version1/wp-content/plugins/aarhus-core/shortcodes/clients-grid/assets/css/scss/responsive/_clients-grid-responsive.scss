@@ -1,0 +1,28 @@
+/* ==========================================================================
+   clients Holder shortcode responsive style - begin
+   ========================================================================== */
+
+@media only screen and (min-width: $ipad-portrait-plus-pixel) and (max-width: $ipad-landscape) {
+
+    .qodef-clients-grid-holder {
+
+        &.qodef-grid-list {
+
+            &.qodef-four-columns {
+
+                .qodef-item-space,
+                .qodef-masonry-grid-sizer {
+                    width: 50%;
+                }
+
+                .qodef-item-space:nth-child(2n) {
+                    clear: none;
+                }
+            }
+        }
+    }
+}
+
+/* ==========================================================================
+   clients Holder shortcode responsive style - end
+   ========================================================================== */

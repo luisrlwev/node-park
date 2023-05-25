@@ -1,0 +1,33 @@
+
+# BEGIN INDEX
+# Las directivas (líneas) entre `BEGIN INDEX` y `END INDEX` se generan dinámicamente
+# , y solo se deberían modificar mediante filtros de WordPress.
+# Cualquier cambio en las directivas que hay entre esos marcadores se sobreescribirán.
+Options -Indexes
+# END INDEX
+# BEGIN supercache
+# Las directivas (líneas) entre `BEGIN supercache` y `END supercache` se generan dinámicamente
+# , y solo se deberían modificar mediante filtros de WordPress.
+# Cualquier cambio en las directivas que hay entre esos marcadores se sobreescribirán.
+<IfModule mod_mime.c>
+  <FilesMatch "\.html\.gz$">
+    ForceType text/html
+    FileETag None
+  </FilesMatch>
+  AddEncoding gzip .gz
+  AddType text/html .gz
+</IfModule>
+<IfModule mod_deflate.c>
+  SetEnvIfNoCase Request_URI \.gz$ no-gzip
+</IfModule>
+<IfModule mod_headers.c>
+  Header set Vary 'Accept-Encoding, Cookie'
+  Header set Cache-Control 'max-age=3, must-revalidate'
+</IfModule>
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html A3
+</IfModule>
+Options -Indexes
+
+# END supercache

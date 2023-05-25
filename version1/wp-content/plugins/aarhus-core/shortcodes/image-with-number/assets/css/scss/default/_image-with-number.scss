@@ -1,0 +1,185 @@
+/* ==========================================================================
+   Image With Number shortcode style - begin
+   ========================================================================== */
+
+.qodef-image-with-number-holder {
+    @include qodefRelativeHolderLayout();
+
+    &.qodef-with-number,
+    &.qodef-with-image {
+
+        &:hover {
+
+            .qodef-iwn-image {
+                opacity: 1;
+                @include qodefTransition(opacity 0.3s ease-in);
+            }
+
+            .qodef-iwn-text-holder {
+
+                .qodef-iwn-title {
+                    @include qodefTransition(color 0.2s ease-in);
+                    color: $default-background-color;
+
+                    .qodef-iwn-before-title {
+                        @include qodefTransition(background-color 0.2s ease-in);
+                        background-color: $default-background-color;
+                    }
+                }
+
+                .qodef-iwn-text {
+                    @include qodefTransition(color 0.3s ease-in);
+                    color: $default-background-color;
+                }
+            }
+        }
+    }
+
+    &.qodef-with-number {
+
+        &:hover {
+
+            .qodef-iwn-number-holder {
+                @include qodefTransition(transform 0.3s cubic-bezier(0.4, 0, 0.2, 1));
+                @include qodefTransform(rotate(-90deg) scale(1.75, 1.75) translateX(-2px));
+
+                .qodef-iwn-number {
+                    @include qodefTransition(color 0.3s ease-in);
+                    color: $default-background-color;
+                }
+            }
+        }
+    }
+
+    &.qodef-with-image {
+
+        &:hover {
+
+            .qodef-iwn-overlay-image-holder {
+
+                .qodef-iwn-overlay-image {
+                    @include qodefTransition(opacity 0.3s ease-in);
+                    opacity: 0;
+                }
+
+                .qodef-iwn-overlay-hover-image {
+                    @include qodefTransition(opacity 0.3s ease-in);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .qodef-iwn-image {
+        @include qodefRelativeHolderLayout();
+        @include qodefTransition(opacity 0.3s ease-out);
+        opacity: 0;
+
+        a, img {
+            position: relative;
+            display: block;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            display: block;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    .qodef-iwn-text-holder {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 75px 57px 75px 68px;
+
+        .qodef-iwn-title {
+            @include qodefTransition(color 0.2s ease-out);
+            @include qodefRelativeHolderLayout();
+            margin: 0;
+
+            .qodef-iwn-before-title {
+                @include qodefTransition(background-color 0.2s ease-out);
+                position: absolute;
+                top: calc(50% - 3px);
+                @include qodefTransform(translateY(-50%));
+                display: inline-block;
+                background-color: $first-main-color;
+                width: 11px;
+                height: 11px;
+                margin-left: -21px;
+            }
+        }
+
+        .qodef-iwn-text {
+            @include qodefTransition(color 0.3s ease-out);
+            margin: 11px 0 0;
+        }
+    }
+
+    /***** With Number Style - begin *****/
+
+    .qodef-iwn-number-holder {
+        position: absolute;
+        bottom: 0;
+        transform-origin: bottom left;
+        @include qodefTransition(transform 0.3s ease-out);
+        @include qodefTransform(rotate(-90deg) scale(1,1));
+        left: 100%;
+        margin-bottom: -5px;
+        user-select: none;
+
+        .qodef-iwn-number {
+            @include qodefTransition(color 0.3s ease-out);
+            display: block;
+            font-size: 130px;
+            line-height: 1em;
+            height: 103px;
+            font-weight: 900;
+            color: rgba(239, 238, 238, 0.9);
+        }
+    }
+
+    /***** With Number Style - end *****/
+
+    /***** With Image Style - begin *****/
+
+    .qodef-iwn-overlay-image-holder {
+        position: absolute;
+        bottom: 0px;
+        right: 0;
+
+        .qodef-iwn-overlay-image,
+        .qodef-iwn-overlay-hover-image {
+
+            img {
+                display: block;
+
+                @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+                    width: 100%;
+                }
+            }
+        }
+
+        .qodef-iwn-overlay-image {
+            @include qodefTransition(opacity 0.3s ease-out);
+            opacity: 1;
+        }
+
+        .qodef-iwn-overlay-hover-image {
+            @include qodefTransition(opacity 0.3s ease-out);
+            position: absolute;
+            top: 0;
+            opacity: 0;
+        }
+    }
+
+    /***** With Image Style - end *****/
+}
+/* ==========================================================================
+   Image With Number shortcode style - end
+   ========================================================================== */

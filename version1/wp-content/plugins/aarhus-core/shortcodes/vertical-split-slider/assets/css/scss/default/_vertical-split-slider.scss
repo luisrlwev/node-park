@@ -1,0 +1,353 @@
+/* ==========================================================================
+   Vertical Split Slider shortcode style - begin
+   ========================================================================== */
+
+.qodef-vss-initialized {
+	
+	.qodef-content {
+		
+		.qodef-content-inner {
+			
+			> .qodef-container {
+				
+				> .qodef-container-inner {
+					padding: 0;
+				}
+			}
+			
+			> .qodef-full-width {
+				
+				> .qodef-full-width-inner {
+					padding: 0;
+				}
+			}
+		}
+	}
+}
+
+.qodef-vertical-split-slider {
+	position: relative;
+	opacity: 0;
+	margin: 0 -2px;
+	overflow: hidden;
+	
+	.qodef-vss-ms-left,
+	.qodef-vss-ms-right {
+		position: absolute;
+		width: 50%;
+		height: 100%;
+		box-sizing: border-box;
+	}
+
+	.qodef-vss-ms-left {
+		top: 0;
+		left: 0;
+		
+		.qodef-vss-ms-section {
+			background-position: 100% center;
+			background-size: cover;
+		}
+	}
+
+	.qodef-vss-ms-right {
+		top: 10000px;
+		right: 0;
+		
+		.qodef-vss-ms-section {
+			background-position: 0 center;
+			background-size: cover;
+		}
+	}
+	
+	.qodef-vss-ms-section {
+		
+		&.ms-table{
+			display: table;
+			width: 100%;
+			table-layout: fixed;
+			box-sizing: border-box;
+		}
+		
+		.ms-tableCell {
+			display: table-cell;
+			vertical-align: middle;
+			width: 100%;
+			height: 100%;
+			box-sizing: border-box;
+			@include qodefTransition(padding .45s cubic-bezier(.4, 0, .2, 1));
+		}
+		
+		.ms-easing {
+			@include qodefTransition(all 0.7s ease-out);
+		}
+	}
+	
+	&.qodef-vss-scrolled {
+		
+		.qodef-vss-ms-left {
+			
+			.qodef-vss-ms-section {
+				
+				.ms-tableCell {
+					padding: 7.5rem 0 7.5rem 7.5rem;
+				}
+			}
+		}
+		
+		.qodef-vss-ms-right {
+			
+			.qodef-vss-ms-section {
+				
+				.ms-tableCell {
+					padding: 7.5rem 7.5rem 7.5rem 0;
+				}
+			}
+		}
+		
+		.qodef-vss-horizontal-mask {
+			
+			&:before,
+			&:after {
+				@include qodefTransform(scaleY(1));
+			}
+		}
+		
+		.qodef-vss-vertical-mask {
+			
+			&:before,
+			&:after {
+				@include qodefTransform(scaleX(1));
+			}
+		}
+	}
+	
+	.qodef-vss-horizontal-mask {
+		
+		&:before,
+		&:after {
+			content: '';
+			position: absolute;
+			left: 0;
+			right: 0;
+			background-color: #fff;
+			height: 7.5rem;
+			z-index: 500;
+			@include qodefTransform(scaleY(0));
+			@include qodefTransitionTransform(.45s cubic-bezier(.4, 0, .2, 1));
+		}
+		
+		&:before {
+			top: 0;
+			-webkit-transform-origin: center top;
+			-ms-transform-origin: center top;
+			transform-origin: center top;
+		}
+		
+		&:after {
+			bottom: 0;
+			-webkit-transform-origin: center bottom;
+			-ms-transform-origin: center bottom;
+			transform-origin: center bottom;
+		}
+	}
+	
+	.qodef-vss-vertical-mask {
+		
+		&:before,
+		&:after {
+			content: '';
+			position: absolute;
+			top: 0;
+			bottom: 0;
+			background-color: #fff;
+			width: 7.5rem;
+			z-index: 500;
+			@include qodefTransform(scaleX(0));
+			@include qodefTransitionTransform(.45s cubic-bezier(.4, 0, .2, 1));
+		}
+		
+		&:before {
+			left: 0;
+			-webkit-transform-origin: center left;
+			-ms-transform-origin: center left;
+			transform-origin: center left;
+		}
+		
+		&:after {
+			right: 0;
+			-webkit-transform-origin: center right;
+			-ms-transform-origin: center right;
+			transform-origin: center right;
+		}
+	}
+}
+
+.qodef-vss-responsive {
+	display: none;
+	
+	.qodef-vss-ms-section {
+		background-position: center;
+		background-size: cover;
+	}
+}
+
+#multiscroll-nav {
+	position: fixed;
+	top: 50%;
+	right: 64px;
+	margin-top: -10px;
+	opacity: 1;
+	z-index: 1000;
+	@include qodefTransition(opacity .5s ease-out);
+	
+	.qodef-fullscreen-menu-opened & {
+		z-index: -1;
+	}
+
+
+	.owl-dots {
+        
+
+        .owl-dot {
+	
+	        &:before {
+		        content:'';
+		        flex: 1 0 auto;
+		        position: relative;
+		        height: 1px;
+		        width: 0;
+		        margin-right: 10px;
+		        background: currentColor;
+		        @include qodefTransition(width .25s ease)
+	        }
+
+            &:after {
+                content: "0" counter(section);
+                position: relative;
+                display: block;
+                font-size: 16px;
+                counter-increment: section;
+                font-weight: 700;
+                font-family: $default-text-font;
+                @include qodefTransition(transform 0.2s ease-out);
+            }
+
+            &:hover,
+            &.active {
+
+                &:after {
+                    @include qodefTransform(scale(1.4, 1.4));
+                    @include qodefTransition(transform 0.2s ease-in);
+                    font-size: 16px;
+                }
+            }
+
+            &.active {
+
+                &:before {
+                    width: 100px;
+                }
+                
+                &:after {
+                    pointer-events: none;
+                    cursor: default;
+                }
+            }
+        }
+    }
+
+	ul {
+		display: inline-flex;
+		position: relative;
+		vertical-align: middle;
+		-webkit-align-items: center;
+		align-items: center;
+		background: none;
+		@include qodefTransform(rotateZ(90deg) translateX(50%));
+		@include qodefTransformOrigin(bottom right);
+		right: 17px;
+		width: 350px;
+		text-align: right;
+		margin: 0;
+		padding: 0 0 22px;
+		z-index: 123;
+		overflow: visible;
+		counter-reset: section;
+
+		li {
+			list-style: none;
+
+			a {
+				display: inline-flex;
+				position: relative;
+				vertical-align: middle;
+				-webkit-align-items: center;
+				align-items: center;
+				line-height: 20px;
+				padding: 0;
+				margin: 0 6px;
+				background: 0 0;
+				border: 0;
+				border-radius: 0;
+				outline: 0;
+				-webkit-appearance: none;
+				color: #fff;
+				overflow: visible;
+			
+				&:before {
+					content:'';
+					flex: 1 0 auto;
+					position: relative;
+					height: 1px;
+					width: 0;
+					margin-right: 10px;
+					background: currentColor;
+					@include qodefTransition(width .25s ease)
+				}
+
+				&:after {
+					content: "0" counter(section);
+					position: relative;
+					display: block;
+					font-size: 16px;
+					counter-increment: section;
+					font-weight: 700;
+					font-family: $default-text-font;
+					@include qodefTransition(transform 0.2s ease-out);
+				}
+
+				&:hover,
+				&.active {
+
+					&:after {
+						@include qodefTransform(scale(1.4, 1.4));
+						font-size: 16px;
+					}
+				}
+
+				.qodef-light-header & {
+					color: #fff;
+				}
+
+				.qodef-dark-header & {
+					color: #000;
+				}
+
+				&.active {
+
+					&:before {
+						width: 100px;
+					}
+					
+					&:after {
+						pointer-events: none;
+						cursor: default;
+					}
+				}
+			}
+		}
+	}
+}
+/* ==========================================================================
+   Vertical Split Slider shortcode style - end
+   ========================================================================== */

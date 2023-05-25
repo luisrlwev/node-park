@@ -1,0 +1,210 @@
+/* ==========================================================================
+   Portfolio vertical loop shortcode responsive style - begin
+   ========================================================================== */
+
+.qodef-portfolio-vertical-loop-holder {
+
+	@include laptop-landscape-large {
+
+		article {
+
+			.qodef-pvli-content-holder {
+
+				.qodef-pvli-image-holder {
+					height: 596px;
+
+					.qodef-pvli-image-inner {
+						height: 596px;
+
+						.qodef-pvli-image {
+							height: 596px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@media only screen and (min-width: $laptop-landscape-mac) and (max-width: $laptop-landscape-large) {
+
+		.qodef-pvli-content-holder {
+
+			.qodef-pvli-text {
+
+				.qodef-pvl-info-holder {
+					padding-left: 35px;
+				}
+			}
+		}
+	}
+
+	@include laptop-landscape-mac {
+
+		article {
+
+			.qodef-pvli-content-holder {
+
+				.qodef-pvli-image-holder {
+					height: 491px;
+
+					.qodef-pvli-image-inner {
+						height: 491px;
+
+						.qodef-pvli-image {
+							height: 491px;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@include ipad-landscape {
+
+		article {
+
+			.qodef-pvli-content-holder {
+
+				.qodef-pvli-image-holder {
+					height: auto;
+					margin: 0 0 127px 75px;
+
+					.qodef-pvli-image-inner {
+						height: auto;
+
+						.qodef-pvli-image {
+							background-position: center center !important;
+
+							&.qodef-parallax-row-holder {
+								min-height: 614px !important;
+							}
+						}
+					}
+				}
+
+				.qodef-pvli-text {
+
+					.qodef-pvli-excerpt {
+						margin: 0 60px 41px 152px;
+					}
+
+					.qodef-pvl-tags {
+						margin: 0 80px 41px 152px;
+					}
+
+					.qodef-pvl-info-holder {
+						margin: 0 0 0 152px;
+					}
+				}
+			}
+		}
+	}
+
+	@include ipad-portrait {
+
+		article {
+
+			.qodef-pvli-content-holder {
+
+				.qodef-pvli-image-holder {
+
+					.qodef-pvli-image-inner {
+
+						.qodef-pvli-image {
+
+							&.qodef-parallax-row-holder {
+								min-height: 870px !important;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@include phone-portrait {
+
+		.qodef-pvl-navigation-holder {
+			position: relative;
+			top: 0;
+			left: 0;
+			width: 100%;
+			@include qodefTransform(rotateZ(0deg) translateX(0));
+
+			.qodef-pvl-navigation {
+
+				.qodef-pvl-prev a,
+				.qodef-pvl-next a,
+				.qodef-pvl-back-btn a {
+					font-size: 15px;
+				}
+			}
+		}
+
+		article {
+
+			.vc_row.qodef-parallax-row-holder {
+				min-height: unset !important;
+				margin-left: 0;
+			}
+
+			.qodef-pvli-content-holder {
+
+				.qodef-pvli-image-holder {
+					margin: 0 0 127px 0;
+
+					.qodef-pvli-image-inner {
+
+						.qodef-pvli-image {
+
+							&.qodef-parallax-row-holder {
+								min-height: 434px !important;
+							}
+						}
+
+						.qodef-pvli-image-title {
+
+							.qodef-pvli-image-title-inner {
+
+								.qodef-pvli-title {
+
+									font-size: 48px;
+								}
+							}
+						}
+					}
+				}
+
+				.qodef-pvli-text {
+
+					.qodef-pvli-excerpt {
+						margin: 41px 0;
+					}
+
+					.qodef-pvl-tags {
+						margin: 0 0 41px 0;
+					}
+
+					.qodef-pvl-info-holder {
+						margin: 0;
+					}
+				}
+			}
+
+			&.next-item {
+
+				.qodef-pvli-content-holder {
+
+					.qodef-pvli-background-text {
+
+						font-size: 140px;
+					}
+				}
+			}
+		}
+	}
+}
+
+/* ==========================================================================
+   Portfolio vertical loop shortcode responsive style - end
+   ========================================================================== */

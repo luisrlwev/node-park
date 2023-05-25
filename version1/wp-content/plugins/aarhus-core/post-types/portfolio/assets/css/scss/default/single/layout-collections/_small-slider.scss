@@ -1,0 +1,133 @@
+/* ==========================================================================
+   Portfolio Single - Small Slider layout style - begin
+   ========================================================================== */
+
+.qodef-portfolio-single-holder {
+
+	&.qodef-ps-small-slider-layout {
+
+		.qodef-ps-image-holder {
+
+			.qodef-ps-image-inner {
+				visibility: hidden;
+			}
+
+			.qodef-ps-image {
+				margin: 0 0 10px;
+
+				img {
+					width: 100%;
+				}
+
+				&:last-child {
+					margin: 0;
+				}
+			}
+
+			.owl-nav {
+
+				.owl-next,
+				.owl-prev {
+					color: $default-heading-color;
+					@include qodefTransition(opacity .2s ease-out);
+
+					> span {
+						font-size: 35px;
+						vertical-align: baseline;
+					}
+
+					&:hover {
+						color: $default-heading-color;
+						opacity: 0.8;
+						@include qodefTransition(opacity .2s ease-in);
+					}
+				}
+			}
+		}
+
+		.qodef-ps-info-holder {
+			padding-left: 19px;
+
+			.qodef-ps-info-item {
+				margin: 0 0 16px;
+
+				> h2 {
+					margin: 0 0 20px 0;
+					line-height: 43px;
+				}
+
+				> p {
+					padding-left: 4px;
+					line-height: 25px;
+				}
+
+				>h6.qodef-ps-info-title {
+					font-size: 16px;
+					color: $default-text-color;
+					padding-left: 5px;
+				}
+			}
+
+			.qodef-ps-custom-field {
+				margin: 0 0 16px;
+
+				> p {
+					font-size: 19px;
+					font-weight: 500;
+					color: $default-heading-color;
+					line-height: 18px;
+					padding-left: 5px;
+				}
+			}
+
+			.qodef-ps-categories {
+
+				> a {
+					font-size: 19px;
+					font-weight: 500;
+					color: $default-heading-color;
+					line-height: 18px;
+					padding-left: 5px;
+
+					&:hover {
+						color: $first-main-color;
+					}
+				}
+			}
+
+			.qodef-ps-social-share {
+
+				.qodef-social-share-holder {
+
+					.qodef-social-title {
+						margin-left: 5px;
+					}
+
+					> ul {
+						display: block;
+						margin-top: 3px;
+						margin-left: 2px;
+					}
+				}
+			}
+		}
+
+		@include ipad-landscape {
+
+			.qodef-ps-info-holder {
+				padding-left: 0;
+			}
+		}
+
+		.qodef-ps-content-item {
+			margin: 0 0 30px;
+		}
+
+		.qodef-ps-navigation {
+			margin: 93px 0 0;
+		}
+	}
+}
+/* ==========================================================================
+   Portfolio Single - Small Slider layout style - end
+   ========================================================================== */

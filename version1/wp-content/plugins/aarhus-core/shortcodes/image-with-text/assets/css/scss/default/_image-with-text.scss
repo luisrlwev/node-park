@@ -1,0 +1,215 @@
+/* ==========================================================================
+   Image With Text shortcode style - begin
+   ========================================================================== */
+
+.qodef-image-with-text-holder {
+    @include qodefRelativeHolderLayout();
+	
+	&.qodef-has-shadow {
+		
+		.qodef-iwt-image {
+			box-shadow: 0 0px 4px rgba(0,0,0,0.1);
+		}
+	}
+	
+	.qodef-iwt-image {
+		@include qodefRelativeHolderLayout();
+		
+		a, img {
+			position: relative;
+			display: block;
+		}
+	}
+	
+	.qodef-iwt-text-holder {
+		@include qodefRelativeHolderLayout();
+	}
+	
+	.qodef-iwt-title {
+		margin: 32px 0 0;
+	}
+	
+	.qodef-iwt-text {
+		color: #212121;
+		margin: 24px 0 0 0px;
+		font-size: 19px;
+		font-weight: 500;
+
+		.qodef-iwt-pre-text {
+			color: $default-text-color;
+			font-weight: 400;
+		}
+	}
+
+	&.qodef-type-inside-image {
+
+		.qodef-iwt-text-holder {
+			position: absolute;
+			bottom: 0;
+			padding: 32px 37px;
+			box-sizing: border-box;
+
+			.qodef-iwt-pre-title {
+				margin-left: 2px;
+			}
+
+			.qodef-iwt-title {
+				margin: 0;
+				line-height: 1em;
+			}
+		}
+
+		&.qodef-image-behavior-custom-link {
+
+			.qodef-iwt-image {
+				overflow: hidden;
+
+				&:after {
+					content: "";
+					@include qodefAbsoluteHolderLayout();
+					background: -moz-linear-gradient(top,rgba(0,0,0,0) 0,rgba(0,0,0,.47) 100%);
+					background: -webkit-linear-gradient(top,rgba(0,0,0,0) 0,rgba(0,0,0,.47) 100%);
+					background: linear-gradient(to bottom,rgba(0,0,0,0) 0,rgba(0,0,0,.47) 100%);
+					filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#d9000000', GradientType=0 );
+					box-sizing: border-box;
+					@include qodefTransition(.6s ease-in-out);
+					backface-visibility: hidden;
+				}
+
+				a {
+
+					img {
+						@include qodefTransition(transform .5s ease-out);
+					}
+
+					&:after {
+						background-color: transparent;
+					}
+				}
+			}
+
+			&:hover {
+
+				.qodef-iwt-image {
+					box-shadow: -1px 1px 19px 0px rgba(45, 45, 45, 0.14);
+					@include qodefTransform(translate3d(0,0,0));
+
+					a {
+
+						img {
+							@include qodefTransform(scale(1.03));
+						}
+					}
+				}
+			}
+		}
+	}
+	
+	/***** Custom Link Behavior Style - begin *****/
+	
+	&.qodef-image-behavior-custom-link {
+		
+		.qodef-iwt-image {
+			overflow: hidden;
+			@include qodefTransition(.3s ease-out);
+
+			a {
+
+				&:after {
+					background-color: transparent;
+				}
+			}
+		}
+
+		&:hover {
+
+			.qodef-iwt-image {
+				box-shadow: -1px 1px 19px 0px rgba(45, 45, 45, 0.14);
+				@include qodefTransform(translate3d(0,-10px,0));
+
+				@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+					/* IE10+ CSS styles go here */
+					box-shadow: 0 0px 4px rgba(0,0,0,0.1) !important;
+				}
+			}
+		}
+	}
+	
+	/***** Custom Link Behavior Style - end *****/
+	
+	/***** Lightbox Behavior Style - begin *****/
+	
+	&.qodef-image-behavior-lightbox {
+		
+		.qodef-iwt-image {
+			
+			a {
+				@include qodefImageOverlayHoverStyle();
+			}
+		}
+	}
+	
+	/***** Lightbox Behavior Style - end *****/
+	
+	/***** Zoom Behavior Style - begin *****/
+	
+	&.qodef-image-behavior-zoom {
+		
+		.qodef-iwt-image {
+			overflow: hidden;
+			
+			.touch & {
+				cursor: pointer;
+			}
+			
+			&:hover {
+				
+				img {
+					@include qodefTransform(scale(1.04));
+				}
+			}
+			
+			img {
+				@include qodefTransform(scale(1));
+				@include qodefTransitionTransform(.3s ease-in-out);
+			}
+		}
+	}
+	
+	/***** Zoom Behavior Style - end *****/
+	
+	/***** Grayscale Behavior Style - begin *****/
+	
+	&.qodef-image-behavior-grayscale {
+		
+		.qodef-iwt-image {
+			overflow: hidden;
+			
+			.touch & {
+				cursor: pointer;
+			}
+			
+			&:hover {
+				
+				img {
+					-webkit-filter: grayscale(0);
+					filter: none;
+				}
+			}
+			
+			img {
+				filter: url('img/desaturate.svg#grayscale');
+				-webkit-filter: grayscale(100%);
+				-moz-filter: grayscale(100%);
+				filter: gray;
+				filter: grayscale(100%);
+				@include qodefTransition(all .3s ease-in-out);
+			}
+		}
+	}
+	
+	/***** Grayscale Behavior Style - end *****/
+}
+/* ==========================================================================
+   Image With Text shortcode style - end
+   ========================================================================== */

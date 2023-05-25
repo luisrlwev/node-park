@@ -1,0 +1,106 @@
+/* ==========================================================================
+   Portfolio Single navigation style - begin
+   ========================================================================== */
+
+.qodef-ps-navigation {
+	position: relative;
+	display: table;
+	width: 100%;
+	vertical-align: middle;
+	padding: 0;
+	margin: 60px 0 0;
+	clear: both;
+    box-sizing: border-box;
+
+    .qodef-ps-full-width-custom-layout & {
+        padding: 0 40px;
+    }
+	
+	.qodef-ps-back-btn {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		display: inline-block;
+		vertical-align: middle;
+		@include qodefTransform(translateX(-50%) translateY(-50%));
+		
+		a {
+			width: 26px;
+			position: relative;
+			display: inline-block;
+			margin: 0;
+			padding: 0;
+			vertical-align: middle;
+			cursor: pointer;
+			font-size: 23px;
+			line-height: 1;
+			
+			span {
+				float: left;
+				display: block;
+				margin: 2px;
+				line-height: inherit;
+				height: 7px;
+				width: 7px;
+				background-color: $default-heading-color;
+			}
+		}
+	}
+	
+	.qodef-ps-prev,
+	.qodef-ps-next {
+		position: relative;
+		display: table-cell;
+		vertical-align: middle;
+		width: 49%;
+		padding: 0;
+		box-sizing: border-box;
+		
+		a {
+			position: relative;
+			display: inline-block;
+			vertical-align: middle;
+			font-size: 19px;
+			line-height: 19px;
+			
+			.qodef-ps-nav-mark {
+				position: relative;
+				display: inline-block;
+				vertical-align: middle;
+				width: 12px;
+				
+				&:before {
+					display: block;
+					line-height: inherit;
+				}
+			}
+
+			&:hover {
+				color: $default-heading-color;
+			}
+		}
+	}
+	
+	.qodef-ps-prev {
+		
+		a {
+			
+			.qodef-ps-nav-mark {
+				left: 0;
+			}
+		}
+	}
+	
+	.qodef-ps-next {
+		text-align: right;
+		
+		a {
+			.qodef-ps-nav-mark {
+				right: 0;
+			}
+		}
+	}
+}
+/* ==========================================================================
+   Portfolio Single navigation style - end
+   ========================================================================== */

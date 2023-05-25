@@ -1,0 +1,150 @@
+/* ==========================================================================
+   Icon With Text shortcode style - begin
+   ========================================================================== */
+
+.qodef-iwt {
+	@include qodefRelativeHolderLayout();
+
+	a {
+		position: relative;
+		display: inline-block;
+		vertical-align: middle;
+		color: inherit;
+
+		.qodef-iwt-icon {
+			position: relative;
+
+			.qodef-icon-shortcode {
+				line-height: 1;
+
+				.qodef-icon-element {
+					color: inherit;
+				}
+
+				&.qodef-circle,
+				&.qodef-square {
+					line-height: 2;
+				}
+			}
+		}
+	}
+
+	&:hover {
+
+        .qodef-icon-svg-circle .qodef-icon-circle {
+            stroke-dashoffset: 0;
+            stroke-dasharray: 700;
+        }
+    }
+
+	a {
+		position: relative;
+		display: inline-block;
+		vertical-align: top;
+
+		.qodef-iwt-title {
+			margin: 0;
+			line-height: 1.2em;
+		}
+	}
+	
+	.qodef-iwt-title-text {
+		display: block;
+	}
+	
+	.qodef-iwt-text {
+		margin: 0;
+	}
+	
+	&.qodef-iwt-icon-left {
+		width: auto;
+		
+		.qodef-iwt-icon,
+		.qodef-iwt-content {
+			display: table-cell;
+			vertical-align: top;
+		}
+		
+		.qodef-iwt-icon {
+			position: relative;
+			top: 1px;
+			
+			img {
+				max-width: none;
+			}
+		}
+		
+		.qodef-iwt-content {
+			padding: 0 0 0 12px;
+		}
+	}
+	
+	&.qodef-iwt-icon-left-from-title {
+		
+		.qodef-iwt-icon,
+		.qodef-iwt-title-text {
+			position: relative;
+			display: table-cell;
+			vertical-align: middle;
+		}
+		
+		.qodef-iwt-icon {
+			
+			.qodef-icon-element {
+				@include qodefTransition(none);
+			}
+			
+			img {
+				max-width: none;
+			}
+		}
+		
+		.qodef-iwt-title-text {
+			padding: 0 0 0 17px;
+		}
+	}
+	
+	&.qodef-iwt-icon-top {
+		text-align: center;
+		
+		.qodef-iwt-content {
+			padding: 5px 0 0;
+
+			.qodef-iwt-text {
+				font-size: 14px;
+				color: $default-text-color;
+			}
+		}
+	}
+
+	&.qodef-iwt-same-hover-color {
+
+	}
+
+    &.qodef-iwt-hover-animation {
+
+        a {
+            @include qodefTransition(none);
+
+            .qodef-iwt-text,
+            .qodef-icon-shortcode .qodef-icon-element {
+                @include qodefTransition(color .15s ease-in-out);
+            }
+
+            &:hover {
+
+                .qodef-iwt-text,
+                .qodef-icon-shortcode .qodef-icon-element {
+                    color: inherit !important;
+                }
+            }
+        }
+    }
+}
+/* ==========================================================================
+   Icon With Text shortcode style - end
+   ========================================================================== */
+
+.qodef-gif-holder .tp-mask-wrap:after {
+	box-shadow: -4px 3px 20px rgba(0, 0, 0, .08);
+}

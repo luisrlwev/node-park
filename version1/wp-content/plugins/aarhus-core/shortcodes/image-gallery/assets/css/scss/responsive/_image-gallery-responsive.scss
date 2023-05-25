@@ -1,0 +1,16 @@
+/* ==========================================================================
+   Image Gallery shortcode responsive style - begin
+   ========================================================================== */
+
+.qodef-image-gallery {
+
+    &.qodef-pagination-position-left {
+
+        @include phone-portrait {
+
+            .owl-dots {
+                padding: 0 0 5px;
+            }
+        }
+    }
+}

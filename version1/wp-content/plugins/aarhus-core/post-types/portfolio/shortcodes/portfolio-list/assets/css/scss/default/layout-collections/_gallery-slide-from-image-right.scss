@@ -1,0 +1,77 @@
+/* ==========================================================================
+   Portfolio Item Layout - Gallery Slide From Image Right style - begin
+   ========================================================================== */
+
+.qodef-portfolio-list-holder {
+
+    &.qodef-pl-gallery-slide-from-image-right {
+
+        &.qodef-pl-has-shadow {
+
+            .qodef-pl-item-inner {
+                box-shadow: $default-box-shadow;
+            }
+        }
+
+        article {
+
+            &:hover {
+
+                .qodef-pli-image {
+
+                    img {
+                        @include qodefTransform(scale(1.03, 1.03));
+                        @include qodefTransition(transform .5s ease-in);
+                    }
+                }
+
+                .qodef-pli-text-holder {
+                    @include qodefTransform(translateX(-99%) translateY(-50%));
+                }
+            }
+
+            .qodef-pl-item-inner {
+                overflow: hidden;
+            }
+
+            .qodef-pli-image {
+
+                img {
+                    @include qodefTransition(transform .5s ease-out);
+                    backface-visibility: hidden;
+                }
+            }
+        }
+
+        .qodef-pli-text-holder {
+            position: absolute;
+            display: block;
+            width: 80%;
+            height: auto;
+            top: 50%;
+            left: 100%;
+            padding: 15px 20px 14px 17px;
+            background-color: #fff;
+            overflow: hidden;
+            box-sizing: border-box;
+            @include qodefTransform(translateY(-50%));
+            @include qodefTransitionTransform(.4s ease-in-out);
+
+            .qodef-pli-text {
+
+                .qodef-pli-category-holder {
+                    margin: 0 0 0 1px;
+                    line-height: 15px;
+
+                    a {
+                        color: #949494;
+                        font-size: 15px;
+                    }
+                }
+            }
+        }
+    }
+}
+/* ==========================================================================
+   Portfolio Item Layout - Gallery Slide From Image Right style - end
+   ========================================================================== */

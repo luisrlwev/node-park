@@ -1,0 +1,58 @@
+/* ==========================================================================
+   Anchor menu shortcode - start styles
+   ========================================================================== */
+.qodef-anchor-menu-outer{
+	position: fixed;
+	top: 50%;
+	left: 39px;
+	@include qodefTransform(translateY(-50%));
+	z-index: 110; //more than title and content
+	opacity: 0;
+
+	.qodef-anchor-menu-item{
+		padding: 12px 0px;
+	}
+
+	.qodef-anchor{
+
+		&:hover {
+			color: #000;
+		}
+
+		.qodef-anchor-menu-item-number{
+			font-size: 14px;
+			color: #8a8a8a;
+			display: inline-block;
+			position: relative;
+			padding-right: 1px;
+			width: 30px;
+			-webkit-transform-origin: left center;
+			transform-origin: left center;
+			@include qodefTransform(scale(1));
+			@include qodefTransition(transform 0.3s ease 0.3s);
+		}
+
+		.qodef-anchor-menu-item-label{
+			font-size: 17px;
+			font-weight: 700;
+			position: relative;
+			display: inline-block;
+			@include qodefTransform(scale(1));
+			-webkit-transform-origin: left center;
+			transform-origin: left center;
+			@include qodefTransition(transform 0.3s ease 0.3s);
+		}
+
+		&.current{
+
+			.qodef-anchor-menu-item-label{
+				@include qodefTransform(scale(2) translateY(-2px));
+			}
+		}
+	}
+
+
+}
+/* ==========================================================================
+   Anchor menu shortcode - end styles
+   ========================================================================== */
